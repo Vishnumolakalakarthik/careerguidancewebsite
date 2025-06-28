@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Engineering Career Path | Career Guidance</title>
+        <style>
+            /* Base styles */
+            body {
+                margin: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                color: #333;
+            }
+            
+            /* Navigation */
+            nav {
+                background-color: yellow;
+                position: fixed;
+                width: 100%;
+                top: 0%;
+                z-index: 1000;
+            }
+            .navbar {
+                height: 100px;
+            }
+            nav ul {
+                list-style-type: none;
+                display: flex;
+                justify-content: space-around;
+                padding-top: 3px;
+                font-size: 30px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            nav ul li a {
+                text-decoration: none;
+                color: #333;
+            }
+            nav ul li a:active {
+                color: rgb(82, 60, 33);
+            }
+            
+            /* Hero section */
+            .hero {
+                height: 400px;
+                background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                text-align: center;
+                margin-top: 100px;
+                position: relative;
+            }
+            
+            .hero::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.5);
+                z-index: 1;
+            }
+            
+            .hero-content {
+                position: relative;
+                z-index: 2;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+            
+            /* Main content */
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 40px 20px;
+            }
+            
+            .section {
+                margin-bottom: 50px;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+                color: #007bff;
+                border-bottom: 2px solid #007bff;
+                padding-bottom: 10px;
+            }
+            
+            /* Engineering specializations */
+            .specializations {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 30px;
+                margin-top: 30px;
+            }
+            
+            .specialization-card {
+                background-color: #f9f9f9;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+            
+            .specialization-card:hover {
+                transform: translateY(-10px);
+            }
+            
+            .specialization-card h3 {
+                color: #007bff;
+                margin-top: 0;
+            }
+            
+            /* Eligibility criteria */
+            .eligibility {
+                background-color: #f5f5f5;
+                padding: 30px;
+                border-radius: 10px;
+                margin-top: 20px;
+            }
+            
+            .eligibility ul {
+                padding-left: 20px;
+            }
+            
+            .eligibility li {
+                margin-bottom: 10px;
+            }
+            
+            /* Career path */
+            .timeline {
+                position: relative;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px 0;
+            }
+            
+            .timeline::after {
+                content: '';
+                position: absolute;
+                width: 6px;
+                background-color: #007bff;
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                margin-left: -3px;
+            }
+            
+            .timeline-container {
+                padding: 10px 40px;
+                position: relative;
+                background-color: inherit;
+                width: 50%;
+            }
+            
+            .left {
+                left: 0;
+            }
+            
+            .right {
+                left: 50%;
+            }
+            
+            .timeline-content {
+                padding: 20px 30px;
+                background-color: white;
+                position: relative;
+                border-radius: 6px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            
+            /* Buttons */
+            .btn {
+                background-color: #007bff;
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 8px;
+                text-decoration: none;
+                font-size: 1.1rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                display: inline-block;
+                margin-top: 20px;
+            }
+            
+            .btn:hover {
+                background-color: #0056b3;
+            }
+            
+            .btn:active {
+                transform: scale(0.97);
+                background-color: #004a99;
+            }
+            
+            /* Top colleges section */
+            .colleges {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 30px;
+                margin-top: 30px;
+            }
+            
+            .college-card {
+                background-color: #f9f9f9;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            
+            .college-img {
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+            }
+            
+            .college-info {
+                padding: 20px;
+            }
+            
+            .college-info h3 {
+                margin-top: 0;
+                color: #007bff;
+            }
+            
+            /* Footer */
+            footer {
+                background-color: #333;
+                color: white;
+                text-align: center;
+                padding: 20px 0;
+                margin-top: 50px;
+            }
+            
+            /* Responsive design */
+            @media screen and (max-width: 900px) {
+                .timeline::after {
+                    left: 31px;
+                }
+                
+                .timeline-container {
+                    width: 100%;
+                    padding-left: 70px;
+                    padding-right: 25px;
+                }
+                
+                .right {
+                    left: 0%;
+                }
+            }
+            
+            @media screen and (max-width: 768px) {
+                .hero h1 {
+                    font-size: 2.5rem;
+                }
+                
+                nav ul {
+                    font-size: 24px;
+                }
+                
+                .navbar {
+                    height: 80px;
+                }
+            }
+        </style>
+        <link rel="icon" type="image/jpg" href="https://imgs.search.brave.com/xYn4rsbrgRlx-4OzaOouA8rwUb-6wbV9JQMNVWZ8DUI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2l4c3RhdGlj/LmNvbS9tZWRpYS8w/N2YwNTJfODg5Yzg2/MzZmN2JmNGI1ZDhm/MWQyMmFmMWY1OGQy/NTl-bXYyLmpwZy92/MS9maWxsL3dfNjAw/LGhfNDg2LGFsX2Ms/cV84MCx1c21fMC42/Nl8xLjAwXzAuMDEs/ZW5jX2F2aWYscXVh/bGl0eV9hdXRvL0lN/R18xNjY1X2VkaXRl/ZC5qcGc">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="cgindex.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Engineering Career Path</h1>
+                <p>Build the future through innovation and technical excellence</p>
+            </div>
+        </section>
+        
+        <div class="container">
+            <section class="section">
+                <h2>What is Engineering?</h2>
+                <p>Engineering is the application of scientific knowledge to designing and building machines, structures, and other items, including bridges, tunnels, roads, vehicles, and buildings. The discipline of engineering encompasses a broad range of more specialized fields of engineering, each with a more specific emphasis on particular areas of applied mathematics, applied science, and types of application.</p>
+                <p>The term engineering is derived from the Latin ingenium, meaning "cleverness" and ingeniare, meaning "to contrive, devise". Engineers use their knowledge of science, mathematics, logic, economics, and appropriate experience or tacit knowledge to find suitable solutions to a particular problem.</p>
+            </section>
+            
+            <section class="section">
+                <h2>Engineering Specializations</h2>
+                <p>Engineering is a diverse field with many specialized branches. Here are some popular engineering specializations you can consider:</p>
+                
+                <div class="specializations">
+                    <div class="specialization-card">
+                        <h3>Computer Science & IT</h3>
+                        <p>Focuses on computing technology, software development, artificial intelligence, data science, and information systems.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>Mechanical Engineering</h3>
+                        <p>Deals with the design, analysis, manufacturing, and maintenance of mechanical systems and thermal devices.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>Electrical Engineering</h3>
+                        <p>Involves the study and application of electricity, electronics, and electromagnetism for various systems.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>Civil Engineering</h3>
+                        <p>Focuses on the design, construction, and maintenance of the physical and naturally built environment.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>Chemical Engineering</h3>
+                        <p>Applies chemistry, physics, biology, and math to solve problems involving the production of chemicals, fuel, drugs, food, and more.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>Aerospace Engineering</h3>
+                        <p>Specializes in the design and development of aircraft, spacecraft, satellites, and missiles.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Eligibility & Requirements</h2>
+                <p>To pursue a career in engineering, you need to meet certain educational criteria and develop specific skills:</p>
+                
+                <div class="eligibility">
+                    <h3>Educational Requirements:</h3>
+                    <ul>
+                        <li><strong>10+2 Qualification:</strong> Completion of 10+2 with Physics, Chemistry, and Mathematics as core subjects with a minimum of 50-60% marks (varies by institution)</li>
+                        <li><strong>Entrance Exams:</strong> Qualifying in entrance exams like JEE Main, JEE Advanced, BITSAT, or state-level engineering entrance exams</li>
+                        <li><strong>For Higher Studies:</strong> GATE, GRE, and other specialized exams for Master's and PhD programs</li>
+                    </ul>
+                    
+                    <h3>Skills Required:</h3>
+                    <ul>
+                        <li><strong>Analytical & Problem-solving Skills:</strong> Ability to analyze complex problems and develop effective solutions</li>
+                        <li><strong>Mathematical Aptitude:</strong> Strong foundation in mathematics and logical reasoning</li>
+                        <li><strong>Technical Knowledge:</strong> Understanding of scientific principles and engineering concepts</li>
+                        <li><strong>Communication Skills:</strong> Ability to communicate technical information clearly</li>
+                        <li><strong>Teamwork:</strong> Collaboration with interdisciplinary teams on complex projects</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Top Engineering Entrance Exams in India</h2>
+                <p>Here are the top 10 engineering entrance exams in India that open doors to prestigious engineering institutes:</p>
+                
+                <div class="exams-container" style="margin-top: 30px;">
+                    <div class="exam-card" style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <h3 style="color: #007bff; margin-top: 0;">1. JEE Main</h3>
+                        <p><strong>Conducting Body:</strong> National Testing Agency (NTA)</p>
+                        <p><strong>Eligibility:</strong> 12th pass with Physics, Chemistry, and Mathematics</p>
+                        <p><strong>About:</strong> Gateway to NITs, IIITs, and GFTIs, also serves as a screening test for JEE Advanced</p>
+                        <a href="https://jeemain.nta.nic.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card" style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <h3 style="color: #007bff; margin-top: 0;">2. JEE Advanced</h3>
+                        <p><strong>Conducting Body:</strong> One of the IITs (rotational basis)</p>
+                        <p><strong>Eligibility:</strong> Must qualify JEE Main and be in the top 2.5 lakh candidates</p>
+                        <p><strong>About:</strong> The entrance exam for admission to 23 Indian Institutes of Technology (IITs)</p>
+                        <a href="https://jeeadv.ac.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card" style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <h3 style="color: #007bff; margin-top: 0;">3. BITSAT</h3>
+                        <p><strong>Conducting Body:</strong> BITS Pilani</p>
+                        <p><strong>Eligibility:</strong> 12th pass with min. 75% in Physics, Chemistry, and Mathematics</p>
+                        <p><strong>About:</strong> For admission to BITS campuses in Pilani, Goa, and Hyderabad</p>
+                        <a href="https://www.bitsadmission.com/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card" style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <h3 style="color: #007bff; margin-top: 0;">4. VITEEE</h3>
+                        <p><strong>Conducting Body:</strong> Vellore Institute of Technology</p>
+                        <p><strong>Eligibility:</strong> 12th pass with Physics, Chemistry, and Mathematics/Biology</p>
+                        <p><strong>About:</strong> Entrance exam for admission to VIT campuses in Vellore, Chennai, Bhopal and AP</p>
+                        <a href="https://viteee.vit.ac.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card" style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <h3 style="color: #007bff; margin-top: 0;">5. SRMJEEE</h3>
+                        <p><strong>Conducting Body:</strong> SRM Institute of Science and Technology</p>
+                        <p><strong>Eligibility:</strong> 12th pass with Physics, Chemistry, and Mathematics</p>
+                        <p><strong>About:</strong> For admission to SRM University campuses</p>
+                        <a href="https://www.srmist.edu.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card" style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <h3 style="color: #007bff; margin-top: 0;">6. MET</h3>
+                        <p><strong>Conducting Body:</strong> Manipal Academy of Higher Education</p>
+                        <p><strong>Eligibility:</strong> 12th pass with Physics, Chemistry, and Mathematics</p>
+                        <p><strong>About:</strong> For admission to Manipal Institute of Technology and other institutes of MAHE</p>
+                        <a href="https://manipal.edu/mu/admission/indian-students/undergraduate-admission.html" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card" style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <h3 style="color: #007bff; margin-top: 0;">7. COMEDK UGET</h3>
+                        <p><strong>Conducting Body:</strong> Consortium of Medical, Engineering and Dental Colleges of Karnataka</p>
+                        <p><strong>Eligibility:</strong> 12th pass with Physics, Chemistry, and Mathematics</p>
+                        <p><strong>About:</strong> For admission to private engineering colleges in Karnataka</p>
+                        <a href="https://www.comedk.org/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card" style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <h3 style="color: #007bff; margin-top: 0;">8. WBJEE</h3>
+                        <p><strong>Conducting Body:</strong> West Bengal Joint Entrance Examinations Board</p>
+                        <p><strong>Eligibility:</strong> 12th pass with Physics, Chemistry, and Mathematics</p>
+                        <p><strong>About:</strong> For admission to engineering institutes in West Bengal</p>
+                        <a href="https://wbjeeb.nic.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card" style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <h3 style="color: #007bff; margin-top: 0;">9. KIITEE</h3>
+                        <p><strong>Conducting Body:</strong> KIIT University</p>
+                        <p><strong>Eligibility:</strong> 12th pass with minimum 60% marks</p>
+                        <p><strong>About:</strong> For admission to Kalinga Institute of Industrial Technology</p>
+                        <a href="https://kiitee.kiit.ac.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card" style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <h3 style="color: #007bff; margin-top: 0;">10. KCET</h3>
+                        <p><strong>Conducting Body:</strong> Karnataka Examinations Authority</p>
+                        <p><strong>Eligibility:</strong> 12th pass with Physics, Chemistry, and Mathematics</p>
+                        <p><strong>About:</strong> For admission to government engineering colleges in Karnataka</p>
+                        <a href="https://cetonline.karnataka.gov.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Top Engineering Colleges in India</h2>
+                <div class="colleges">
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="IIT Campus" class="college-img">
+                        <div class="college-info">
+                            <h3>IIT Bombay</h3>
+                            <p>Mumbai, Maharashtra</p>
+                        </div>
+                    </div>
+                    
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1592280771190-3e2e4d977759?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="IIT Campus" class="college-img">
+                        <div class="college-info">
+                            <h3>IIT Delhi</h3>
+                            <p>New Delhi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="IIT Campus" class="college-img">
+                        <div class="college-info">
+                            <h3>IIT Madras</h3>
+                            <p>Chennai, Tamil Nadu</p>
+                        </div>
+                    </div>
+                    
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="College Campus" class="college-img">
+                        <div class="college-info">
+                            <h3>BITS Pilani</h3>
+                            <p>Pilani, Rajasthan</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Career Prospects & Salary</h2>
+                <p>Engineering remains one of the most sought-after career paths in India and globally. Here's what you can expect in terms of job opportunities and compensation:</p>
+                
+                <h3>Average Starting Salary:</h3>
+                <p>₹3.5 - 8 lakhs per annum (varies by specialization and institute)</p>
+                
+                <h3>Mid-Career Salary (5-10 years):</h3>
+                <p>₹10 - 25 lakhs per annum</p>
+                
+                <h3>Top Employers:</h3>
+                <p>Google, Microsoft, Amazon, Tata Consultancy Services, Larsen & Toubro, Reliance Industries, ISRO, DRDO, and various multinational corporations</p>
+                
+                <a href="cgindex.html" class="btn">Back to Career Options</a>
+            </section>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Career Guidance. All rights reserved.</p>
+        </footer>
+    </body>
+</html>

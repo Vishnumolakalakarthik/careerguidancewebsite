@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Commerce Career Path | Career Guidance</title>
+        <style>
+            /* Base styles */
+            body {
+                margin: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                color: #333;
+            }
+            
+            /* Navigation */
+            nav {
+                background-color: #4CAF50;
+                position: fixed;
+                width: 100%;
+                top: 0%;
+                z-index: 1000;
+            }
+            .navbar {
+                height: 100px;
+            }
+            nav ul {
+                list-style-type: none;
+                display: flex;
+                justify-content: space-around;
+                padding-top: 3px;
+                font-size: 30px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            nav ul li a {
+                text-decoration: none;
+                color: white;
+            }
+            nav ul li a:active {
+                color: #2E7D32;
+            }
+            
+            /* Hero section */
+            .hero {
+                height: 400px;
+                background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                text-align: center;
+                margin-top: 100px;
+                position: relative;
+            }
+            
+            .hero::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.6);
+                z-index: 1;
+            }
+            
+            .hero-content {
+                position: relative;
+                z-index: 2;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+            
+            /* Main content */
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 40px 20px;
+            }
+            
+            .section {
+                margin-bottom: 50px;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+                color: #2E7D32;
+                border-bottom: 2px solid #2E7D32;
+                padding-bottom: 10px;
+            }
+            
+            /* Commerce specializations */
+            .specializations {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 30px;
+                margin-top: 30px;
+            }
+            
+            .specialization-card {
+                background-color: #f9f9f9;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+            
+            .specialization-card:hover {
+                transform: translateY(-10px);
+            }
+            
+            .specialization-card h3 {
+                color: #2E7D32;
+                margin-top: 0;
+            }
+            
+            /* Eligibility criteria */
+            .eligibility {
+                background-color: #f5f5f5;
+                padding: 30px;
+                border-radius: 10px;
+                margin-top: 20px;
+            }
+            
+            .eligibility ul {
+                padding-left: 20px;
+            }
+            
+            .eligibility li {
+                margin-bottom: 10px;
+            }
+            
+            /* Buttons */
+            .btn {
+                background-color: #2E7D32;
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 8px;
+                text-decoration: none;
+                font-size: 1.1rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                display: inline-block;
+                margin-top: 20px;
+            }
+            
+            .btn:hover {
+                background-color: #1B5E20;
+            }
+            
+            .btn:active {
+                transform: scale(0.97);
+                background-color: #0D4710;
+            }
+            
+            /* Top colleges section */
+            .colleges {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 30px;
+                margin-top: 30px;
+            }
+            
+            .college-card {
+                background-color: #f9f9f9;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            
+            .college-img {
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+            }
+            
+            .college-info {
+                padding: 20px;
+            }
+            
+            .college-info h3 {
+                margin-top: 0;
+                color: #2E7D32;
+            }
+            
+            /* Footer */
+            footer {
+                background-color: #333;
+                color: white;
+                text-align: center;
+                padding: 20px 0;
+                margin-top: 50px;
+            }
+            
+            /* Exam cards */
+            .exams-container {
+                margin-top: 30px;
+            }
+            
+            .exam-card {
+                background-color: #f9f9f9;
+                border-radius: 10px;
+                padding: 20px;
+                margin-bottom: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+            
+            .exam-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .exam-card h3 {
+                color: #2E7D32;
+                margin-top: 0;
+            }
+            
+            /* Responsive design */
+            @media screen and (max-width: 768px) {
+                .hero h1 {
+                    font-size: 2.5rem;
+                }
+                
+                nav ul {
+                    font-size: 24px;
+                }
+                
+                .navbar {
+                    height: 80px;
+                }
+            }
+        </style>
+        <link rel="icon" type="image/jpg" href="https://imgs.search.brave.com/xYn4rsbrgRlx-4OzaOouA8rwUb-6wbV9JQMNVWZ8DUI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2l4c3RhdGlj/LmNvbS9tZWRpYS8w/N2YwNTJfODg5Yzg2/MzZmN2JmNGI1ZDhm/MWQyMmFmMWY1OGQy/NTl-bXYyLmpwZy92/MS9maWxsL3dfNjAw/LGhfNDg2LGFsX2Ms/cV84MCx1c21fMC42/Nl8xLjAwXzAuMDEs/ZW5jX2F2aWYscXVh/bGl0eV9hdXRvL0lN/R18xNjY1X2VkaXRl/ZC5qcGc">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Commerce Career Path</h1>
+                <p>Build your business acumen and excel in the world of finance and management</p>
+            </div>
+        </section>
+        
+        <div class="container">
+            <section class="section">
+                <h2>What is Commerce?</h2>
+                <p>Commerce is a dynamic field that encompasses business, economics, finance, accounting, and management. It deals with the exchange of goods and services, financial transactions, and the principles of business operations. Commerce education provides students with essential knowledge about how businesses function, financial markets operate, and economic systems work.</p>
+                <p>Commerce education develops analytical thinking, financial literacy, business communication, and entrepreneurial skills. It prepares students for careers in banking, finance, accounting, marketing, human resources, and business management. The commerce stream serves as a foundation for understanding the global economy and developing business leadership capabilities.</p>
+            </section>
+            
+            <section class="section">
+                <h2>Commerce Specializations</h2>
+                <p>Commerce offers diverse career paths in business and finance. Here are some popular commerce specializations you can consider:</p>
+                
+                <div class="specializations">
+                    <div class="specialization-card">
+                        <h3>B.Com (Bachelor of Commerce)</h3>
+                        <p>Core commerce education covering accounting, economics, business law, and finance fundamentals.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>BBA (Bachelor of Business Administration)</h3>
+                        <p>Management-focused program covering marketing, HR, operations, and strategic business management.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>B.Com (Hons) Accounting & Finance</h3>
+                        <p>Specialized program in financial accounting, taxation, auditing, and corporate finance.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>BMS (Bachelor of Management Studies)</h3>
+                        <p>Management studies focusing on organizational behavior, business strategy, and leadership skills.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>Economics (Hons)</h3>
+                        <p>Advanced study of micro and macroeconomics, econometrics, and economic policy analysis.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>Banking & Insurance</h3>
+                        <p>Specialized program in banking operations, insurance principles, and financial services management.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Eligibility & Requirements</h2>
+                <p>To pursue a career in commerce, you need to meet certain educational criteria and develop specific skills:</p>
+                
+                <div class="eligibility">
+                    <h3>Educational Requirements:</h3>
+                    <ul>
+                        <li><strong>10+2 Qualification:</strong> Completion of 10+2 in any stream (Commerce preferred)</li>
+                        <li><strong>Commerce Stream Recommended:</strong> 10+2 with Mathematics, Accountancy, Business Studies, Economics</li>
+                        <li><strong>Minimum Marks:</strong> 50-60% marks in 10+2 (varies by institution and course)</li>
+                        <li><strong>Mathematics Requirement:</strong> Mathematics in 10+2 preferred for certain programs like BBA and Economics</li>
+                    </ul>
+                    
+                    <h3>Skills Required:</h3>
+                    <ul>
+                        <li><strong>Analytical Thinking:</strong> Ability to analyze financial data and business problems</li>
+                        <li><strong>Numerical Skills:</strong> Strong mathematical and statistical abilities</li>
+                        <li><strong>Communication Skills:</strong> Effective business communication and presentation skills</li>
+                        <li><strong>Leadership Qualities:</strong> Team management and decision-making capabilities</li>
+                        <li><strong>Attention to Detail:</strong> Precision in financial calculations and record-keeping</li>
+                        <li><strong>Business Acumen:</strong> Understanding of market trends and business dynamics</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Commerce Entrance Exams in India</h2>
+                <p>Here are the top entrance exams for commerce and business education in India:</p>
+                
+                <div class="exams-container">
+                    <div class="exam-card">
+                        <h3>1. DU JAT (Delhi University Joint Admission Test)</h3>
+                        <p><strong>Conducting Body:</strong> National Testing Agency (NTA)</p>
+                        <p><strong>Eligibility:</strong> 12th pass with 45% marks</p>
+                        <p><strong>About:</strong> For admission to BMS, BBA (FIA), and BA (Hons) Business Economics at Delhi University</p>
+                        <a href="https://www.nta.ac.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card">
+                        <h3>2. IPMAT (Integrated Program in Management Aptitude Test)</h3>
+                        <p><strong>Conducting Body:</strong> IIM Indore, IIM Rohtak</p>
+                        <p><strong>Eligibility:</strong> 12th pass with 60% marks</p>
+                        <p><strong>About:</strong> For admission to 5-year integrated BBA+MBA programs at IIMs</p>
+                        <a href="https://www.iimidr.ac.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card">
+                        <h3>3. SET (Symbiosis Entrance Test)</h3>
+                        <p><strong>Conducting Body:</strong> Symbiosis International University</p>
+                        <p><strong>Eligibility:</strong> 12th pass with 45% marks</p>
+                        <p><strong>About:</strong> For admission to BBA and other management programs at Symbiosis colleges</p>
+                        <a href="https://www.siu.edu.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card">
+                        <h3>4. NPAT (NMIMS Programs After Twelfth)</h3>
+                        <p><strong>Conducting Body:</strong> NMIMS University</p>
+                        <p><strong>Eligibility:</strong> 12th pass with 50% marks</p>
+                        <p><strong>About:</strong> For admission to BBA, B.Com, and other undergraduate programs at NMIMS</p>
+                        <a href="https://www.nmims.edu/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card">
+                        <h3>5. UGAT (Under Graduate Aptitude Test)</h3>
+                        <p><strong>Conducting Body:</strong> AIMA (All India Management Association)</p>
+                        <p><strong>Eligibility:</strong> 12th pass from recognized board</p>
+                        <p><strong>About:</strong> For admission to BBA, BCA, and integrated management programs</p>
+                        <a href="https://www.aima.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Top Commerce & Business Colleges in India</h2>
+                <div class="colleges">
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="SRCC Campus" class="college-img">
+                        <div class="college-info">
+                            <h3>SRCC (Delhi University)</h3>
+                            <p>New Delhi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Lady Shri Ram College" class="college-img">
+                        <div class="college-info">
+                            <h3>Lady Shri Ram College</h3>
+                            <p>New Delhi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Christ University" class="college-img">
+                        <div class="college-info">
+                            <h3>Christ University</h3>
+                            <p>Bangalore, Karnataka</p>
+                        </div>
+                    </div>
+                    
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="H.R. College" class="college-img">
+                        <div class="college-info">
+                            <h3>H.R. College of Commerce</h3>
+                            <p>Mumbai, Maharashtra</p>
+                        </div>
+                    </div>
+                    
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Loyola College" class="college-img">
+                        <div class="college-info">
+                            <h3>Loyola College</h3>
+                            <p>Chennai, Tamil Nadu</p>
+                        </div>
+                    </div>
+                    
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="NMIMS" class="college-img">
+                        <div class="college-info">
+                            <h3>NMIMS University</h3>
+                            <p>Mumbai, Maharashtra</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Commerce Education Pathway</h2>
+                <p>A typical pathway for commerce education in India follows these steps:</p>
+                
+                <div style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-top: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2E7D32; margin-top: 0;">1. Undergraduate Level (3 years)</h3>
+                    <ul>
+                        <li><strong>B.Com (Bachelor of Commerce):</strong> 3 years in accounting, finance, economics, and business law</li>
+                        <li><strong>BBA (Bachelor of Business Administration):</strong> 3 years focused on management and business studies</li>
+                        <li><strong>B.Com (Hons):</strong> 3 years specialized honors degree in specific commerce subjects</li>
+                    </ul>
+                </div>
+                
+                <div style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-top: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2E7D32; margin-top: 0;">2. Professional Courses</h3>
+                    <ul>
+                        <li><strong>CA (Chartered Accountancy):</strong> 3-4 years professional course in accounting and auditing</li>
+                        <li><strong>CS (Company Secretary):</strong> 3 years professional course in corporate law and governance</li>
+                        <li><strong>CMA (Cost and Management Accountancy):</strong> 3 years in cost accounting and management</li>
+                    </ul>
+                </div>
+                
+                <div style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-top: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #2E7D32; margin-top: 0;">3. Postgraduate Level (2 years)</h3>
+                    <ul>
+                        <li><strong>MBA (Master of Business Administration):</strong> 2 years advanced management education</li>
+                        <li><strong>M.Com (Master of Commerce):</strong> 2 years advanced study in commerce subjects</li>
+                        <li><strong>MA Economics:</strong> 2 years advanced study in economic theory and policy</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Career Prospects & Salary</h2>
+                <p>Commerce offers excellent career opportunities across various business and financial sectors. Here's what you can expect in terms of job opportunities and compensation:</p>
+                
+                <h3>Average Starting Salary:</h3>
+                <p>₹3 - 8 lakhs per annum (entry-level positions)</p>
+                <p>₹5 - 12 lakhs per annum (top-tier companies and MNCs)</p>
+                
+                <h3>Mid-Career Salary (5-10 years):</h3>
+                <p>₹8 - 25 lakhs per annum (varies by specialization and industry)</p>
+                
+                <h3>Professional Course Salaries:</h3>
+                <p>CA: ₹6 - 20 lakhs per annum | CS: ₹4 - 15 lakhs per annum | CMA: ₹5 - 18 lakhs per annum</p>
+                
+                <h3>Top Career Options:</h3>
+                <p>Investment Banking, Financial Analyst, Management Consultant, Tax Consultant, Audit Manager, Marketing Manager, HR Manager, Business Analyst, Entrepreneur, Corporate Lawyer, Stock Broker, Risk Manager</p>
+                
+                <h3>Top Employers:</h3>
+                <p>Big 4 Firms (Deloitte, PwC, EY, KPMG), Investment Banks (Goldman Sachs, JP Morgan), Consulting Firms (McKinsey, BCG, Bain), MNCs (Google, Microsoft, Amazon), Banks (HDFC, ICICI, SBI), Startups and Fintech companies</p>
+                
+                <a href="cgindex.html" class="btn">Back to Career Options</a>
+            </section>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Career Guidance. All rights reserved.</p>
+        </footer>
+    </body>
+</html>

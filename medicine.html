@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Medicine Career Path | Career Guidance</title>
+        <style>
+            /* Base styles */
+            body {
+                margin: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                color: #333;
+            }
+            
+            /* Navigation */
+            nav {
+                background-color: yellow;
+                position: fixed;
+                width: 100%;
+                top: 0%;
+                z-index: 1000;
+            }
+            .navbar {
+                height: 100px;
+            }
+            nav ul {
+                list-style-type: none;
+                display: flex;
+                justify-content: space-around;
+                padding-top: 3px;
+                font-size: 30px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            nav ul li a {
+                text-decoration: none;
+                color: #333;
+            }
+            nav ul li a:active {
+                color: rgb(82, 60, 33);
+            }
+            
+            /* Hero section */
+            .hero {
+                height: 400px;
+                background-image: url('https://images.unsplash.com/photo-1584982751601-97dcc096659c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                text-align: center;
+                margin-top: 100px;
+                position: relative;
+            }
+            
+            .hero::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.5);
+                z-index: 1;
+            }
+            
+            .hero-content {
+                position: relative;
+                z-index: 2;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+            
+            /* Main content */
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 40px 20px;
+            }
+            
+            .section {
+                margin-bottom: 50px;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+                color: #007bff;
+                border-bottom: 2px solid #007bff;
+                padding-bottom: 10px;
+            }
+            
+            /* Medical specializations */
+            .specializations {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 30px;
+                margin-top: 30px;
+            }
+            
+            .specialization-card {
+                background-color: #f9f9f9;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+            
+            .specialization-card:hover {
+                transform: translateY(-10px);
+            }
+            
+            .specialization-card h3 {
+                color: #007bff;
+                margin-top: 0;
+            }
+            
+            /* Eligibility criteria */
+            .eligibility {
+                background-color: #f5f5f5;
+                padding: 30px;
+                border-radius: 10px;
+                margin-top: 20px;
+            }
+            
+            .eligibility ul {
+                padding-left: 20px;
+            }
+            
+            .eligibility li {
+                margin-bottom: 10px;
+            }
+            
+            /* Buttons */
+            .btn {
+                background-color: #007bff;
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 8px;
+                text-decoration: none;
+                font-size: 1.1rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                display: inline-block;
+                margin-top: 20px;
+            }
+            
+            .btn:hover {
+                background-color: #0056b3;
+            }
+            
+            .btn:active {
+                transform: scale(0.97);
+                background-color: #004a99;
+            }
+            
+            /* Top colleges section */
+            .colleges {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 30px;
+                margin-top: 30px;
+            }
+            
+            .college-card {
+                background-color: #f9f9f9;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            
+            .college-img {
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+            }
+            
+            .college-info {
+                padding: 20px;
+            }
+            
+            .college-info h3 {
+                margin-top: 0;
+                color: #007bff;
+            }
+            
+            /* Footer */
+            footer {
+                background-color: #333;
+                color: white;
+                text-align: center;
+                padding: 20px 0;
+                margin-top: 50px;
+            }
+            
+            /* Exam cards */
+            .exams-container {
+                margin-top: 30px;
+            }
+            
+            .exam-card {
+                background-color: #f9f9f9;
+                border-radius: 10px;
+                padding: 20px;
+                margin-bottom: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+            
+            .exam-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .exam-card h3 {
+                color: #007bff;
+                margin-top: 0;
+            }
+            
+            /* Responsive design */
+            @media screen and (max-width: 768px) {
+                .hero h1 {
+                    font-size: 2.5rem;
+                }
+                
+                nav ul {
+                    font-size: 24px;
+                }
+                
+                .navbar {
+                    height: 80px;
+                }
+            }
+        </style>
+        <link rel="icon" type="image/jpg" href="https://imgs.search.brave.com/xYn4rsbrgRlx-4OzaOouA8rwUb-6wbV9JQMNVWZ8DUI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2l4c3RhdGlj/LmNvbS9tZWRpYS8w/N2YwNTJfODg5Yzg2/MzZmN2JmNGI1ZDhm/MWQyMmFmMWY1OGQy/NTl-bXYyLmpwZy92/MS9maWxsL3dfNjAw/LGhfNDg2LGFsX2Ms/cV84MCx1c21fMC42/Nl8xLjAwXzAuMDEs/ZW5jX2F2aWYscXVh/bGl0eV9hdXRvL0lN/R18xNjY1X2VkaXRl/ZC5qcGc">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Medicine Career Path</h1>
+                <p>Dedicate your life to healthcare and healing</p>
+            </div>
+        </section>
+        
+        <div class="container">
+            <section class="section">
+                <h2>What is Medicine?</h2>
+                <p>Medicine is the science and practice of caring for a patient, managing the diagnosis, prognosis, prevention, treatment, palliation of their injury or disease, and promoting their health. Medicine encompasses a variety of health care practices evolved to maintain and restore health by the prevention and treatment of illness.</p>
+                <p>Contemporary medicine applies biomedical sciences, medical technology to diagnose, treat, and prevent injury and disease, typically through the use of pharmaceuticals or surgery, but also through therapies as diverse as psychotherapy, external splints and traction, medical devices, biologics, and ionizing radiation, amongst others.</p>
+            </section>
+            
+            <section class="section">
+                <h2>Medical Specializations</h2>
+                <p>Medicine is a diverse field with many specialized branches. Here are some popular medical specializations you can consider:</p>
+                
+                <div class="specializations">
+                    <div class="specialization-card">
+                        <h3>MBBS (Allopathy)</h3>
+                        <p>The primary medical degree that allows practice of modern medicine, diagnose diseases, prescribe medications and perform surgeries.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>BDS (Dentistry)</h3>
+                        <p>Focuses on oral health, dental procedures, oral surgeries, and prevention of dental diseases.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>BAMS (Ayurveda)</h3>
+                        <p>Traditional Indian system of medicine that focuses on natural healing, herbs, and lifestyle management.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>BHMS (Homeopathy)</h3>
+                        <p>A medical system that uses highly diluted doses of natural substances to stimulate the body's healing mechanisms.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>B.Pharm (Pharmacy)</h3>
+                        <p>Involves the science of preparing and dispensing medications, drug research, and pharmaceutical care.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>B.V.Sc (Veterinary Science)</h3>
+                        <p>Focuses on animal health, disease prevention, and medical treatment for animals.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Eligibility & Requirements</h2>
+                <p>To pursue a career in medicine, you need to meet certain educational criteria and develop specific skills:</p>
+                
+                <div class="eligibility">
+                    <h3>Educational Requirements:</h3>
+                    <ul>
+                        <li><strong>10+2 Qualification:</strong> Completion of 10+2 with Physics, Chemistry, and Biology as core subjects with a minimum of 50-60% marks (varies by institution)</li>
+                        <li><strong>Entrance Exams:</strong> Qualifying in national or state-level medical entrance exams like NEET (National Eligibility cum Entrance Test)</li>
+                        <li><strong>For Higher Studies:</strong> NEET-PG, AIIMS PG, JIPMER PG for postgraduate specializations</li>
+                    </ul>
+                    
+                    <h3>Skills Required:</h3>
+                    <ul>
+                        <li><strong>Academic Excellence:</strong> Strong foundation in biology, chemistry, and other sciences</li>
+                        <li><strong>Compassion & Empathy:</strong> Ability to connect with patients and understand their concerns</li>
+                        <li><strong>Critical Thinking:</strong> Making quick and accurate decisions in emergency situations</li>
+                        <li><strong>Communication Skills:</strong> Explaining complex medical concepts to patients in simple terms</li>
+                        <li><strong>Stamina & Stress Management:</strong> Ability to work long hours and handle high-pressure situations</li>
+                        <li><strong>Ethical Awareness:</strong> Adhering to medical ethics and patient confidentiality</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Medical Entrance Exams in India</h2>
+                <p>Here are the top medical entrance exams in India that open doors to prestigious medical institutes:</p>
+                
+                <div class="exams-container">
+                    <div class="exam-card">
+                        <h3>1. NEET-UG</h3>
+                        <p><strong>Conducting Body:</strong> National Testing Agency (NTA)</p>
+                        <p><strong>Eligibility:</strong> 12th pass with Physics, Chemistry, and Biology</p>
+                        <p><strong>About:</strong> The single entrance exam for admission to MBBS/BDS courses in all medical colleges across India</p>
+                        <a href="https://neet.nta.nic.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card">
+                        <h3>2. AIIMS</h3>
+                        <p><strong>Conducting Body:</strong> All India Institute of Medical Sciences</p>
+                        <p><strong>Eligibility:</strong> 12th pass with 60% marks in PCB</p>
+                        <p><strong>About:</strong> For admission to undergraduate medical programs in AIIMS institutions</p>
+                        <a href="https://www.aiims.edu/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card">
+                        <h3>3. JIPMER</h3>
+                        <p><strong>Conducting Body:</strong> Jawaharlal Institute of Postgraduate Medical Education & Research</p>
+                        <p><strong>Eligibility:</strong> 12th pass with Physics, Chemistry, and Biology</p>
+                        <p><strong>About:</strong> For admission to JIPMER Puducherry and Karaikal campuses</p>
+                        <a href="https://jipmer.edu.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card">
+                        <h3>4. NEET-PG</h3>
+                        <p><strong>Conducting Body:</strong> National Board of Examinations (NBE)</p>
+                        <p><strong>Eligibility:</strong> MBBS degree with completion of internship</p>
+                        <p><strong>About:</strong> For admission to MD/MS and PG Diploma courses</p>
+                        <a href="https://nbe.edu.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Top Medical Colleges in India</h2>
+                <div class="colleges">
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="AIIMS Campus" class="college-img">
+                        <div class="college-info">
+                            <h3>AIIMS Delhi</h3>
+                            <p>New Delhi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1504439904031-93ded9f93e4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Medical College" class="college-img">
+                        <div class="college-info">
+                            <h3>CMC Vellore</h3>
+                            <p>Vellore, Tamil Nadu</p>
+                        </div>
+                    </div>
+                    
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Medical College" class="college-img">
+                        <div class="college-info">
+                            <h3>JIPMER</h3>
+                            <p>Puducherry</p>
+                        </div>
+                    </div>
+                    
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Medical College" class="college-img">
+                        <div class="college-info">
+                            <h3>KGMU</h3>
+                            <p>Lucknow, Uttar Pradesh</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Medical Education Pathway</h2>
+                <p>A typical pathway for medical education in India follows these steps:</p>
+                
+                <div style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-top: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #007bff; margin-top: 0;">1. Undergraduate Medical Education (5.5 years)</h3>
+                    <ul>
+                        <li><strong>MBBS:</strong> 4.5 years of academic study + 1 year of compulsory rotating internship</li>
+                        <li><strong>BDS:</strong> 4 years of academic study + 1 year of compulsory rotating internship</li>
+                        <li><strong>BAMS/BHMS/BUMS:</strong> 4.5 years of study + 1 year of internship</li>
+                    </ul>
+                </div>
+                
+                <div style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-top: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #007bff; margin-top: 0;">2. Postgraduate Medical Education (2-3 years)</h3>
+                    <ul>
+                        <li><strong>MD (Doctor of Medicine):</strong> 3 years - Clinical specialties like Internal Medicine, Pediatrics, etc.</li>
+                        <li><strong>MS (Master of Surgery):</strong> 3 years - Surgical specialties like General Surgery, Orthopedics, etc.</li>
+                        <li><strong>Diploma:</strong> 2 years - Specialized diplomas in various fields</li>
+                    </ul>
+                </div>
+                
+                <div style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-top: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #007bff; margin-top: 0;">3. Super-specialization (3 years)</h3>
+                    <ul>
+                        <li><strong>DM (Doctorate of Medicine):</strong> Super-specialization in medical fields like Cardiology, Neurology, etc.</li>
+                        <li><strong>MCh (Master of Chirurgical):</strong> Super-specialization in surgical fields like Neurosurgery, Cardiothoracic Surgery, etc.</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Career Prospects & Salary</h2>
+                <p>Medicine offers rewarding career opportunities in various settings. Here's what you can expect in terms of job opportunities and compensation:</p>
+                
+                <h3>Average Starting Salary:</h3>
+                <p>₹6 - 12 lakhs per annum (government sector)</p>
+                <p>₹8 - 18 lakhs per annum (private sector)</p>
+                
+                <h3>Mid-Career Salary (5-10 years):</h3>
+                <p>₹15 - 40 lakhs per annum (varies by specialization)</p>
+                
+                <h3>Top Employers:</h3>
+                <p>Government hospitals, private hospital chains like Apollo, Fortis, Max Healthcare, pharmaceutical companies, research institutions, international health organizations like WHO, and academic institutions</p>
+                
+                <a href="cgindex.html" class="btn">Back to Career Options</a>
+            </section>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Career Guidance. All rights reserved.</p>
+        </footer>
+    </body>
+</html>

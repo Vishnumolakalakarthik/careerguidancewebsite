@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Law Career Path | Career Guidance</title>
+        <style>
+            /* Base styles */
+            body {
+                margin: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                color: #333;
+            }
+            
+            /* Navigation */
+            nav {
+                background-color: #8B4513;
+                position: fixed;
+                width: 100%;
+                top: 0%;
+                z-index: 1000;
+            }
+            .navbar {
+                height: 100px;
+            }
+            nav ul {
+                list-style-type: none;
+                display: flex;
+                justify-content: space-around;
+                padding-top: 3px;
+                font-size: 30px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            nav ul li a {
+                text-decoration: none;
+                color: white;
+            }
+            nav ul li a:active {
+                color: #5D2F0A;
+            }
+            
+            /* Hero section */
+            .hero {
+                height: 400px;
+                background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                text-align: center;
+                margin-top: 100px;
+                position: relative;
+            }
+            
+            .hero::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,0.6);
+                z-index: 1;
+            }
+            
+            .hero-content {
+                position: relative;
+                z-index: 2;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+            
+            /* Main content */
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 40px 20px;
+            }
+            
+            .section {
+                margin-bottom: 50px;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+                color: #8B4513;
+                border-bottom: 2px solid #8B4513;
+                padding-bottom: 10px;
+            }
+            
+            /* Law specializations */
+            .specializations {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 30px;
+                margin-top: 30px;
+            }
+            
+            .specialization-card {
+                background-color: #f9f9f9;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+            
+            .specialization-card:hover {
+                transform: translateY(-10px);
+            }
+            
+            .specialization-card h3 {
+                color: #8B4513;
+                margin-top: 0;
+            }
+            
+            /* Eligibility criteria */
+            .eligibility {
+                background-color: #f5f5f5;
+                padding: 30px;
+                border-radius: 10px;
+                margin-top: 20px;
+            }
+            
+            .eligibility ul {
+                padding-left: 20px;
+            }
+            
+            .eligibility li {
+                margin-bottom: 10px;
+            }
+            
+            /* Buttons */
+            .btn {
+                background-color: #8B4513;
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 8px;
+                text-decoration: none;
+                font-size: 1.1rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                display: inline-block;
+                margin-top: 20px;
+            }
+            
+            .btn:hover {
+                background-color: #5D2F0A;
+            }
+            
+            .btn:active {
+                transform: scale(0.97);
+                background-color: #3D1F07;
+            }
+            
+            /* Top colleges section */
+            .colleges {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 30px;
+                margin-top: 30px;
+            }
+            
+            .college-card {
+                background-color: #f9f9f9;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            
+            .college-img {
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+            }
+            
+            .college-info {
+                padding: 20px;
+            }
+            
+            .college-info h3 {
+                margin-top: 0;
+                color: #8B4513;
+            }
+            
+            /* Footer */
+            footer {
+                background-color: #333;
+                color: white;
+                text-align: center;
+                padding: 20px 0;
+                margin-top: 50px;
+            }
+            
+            /* Exam cards */
+            .exams-container {
+                margin-top: 30px;
+            }
+            
+            .exam-card {
+                background-color: #f9f9f9;
+                border-radius: 10px;
+                padding: 20px;
+                margin-bottom: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+            
+            .exam-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .exam-card h3 {
+                color: #8B4513;
+                margin-top: 0;
+            }
+            
+            /* Responsive design */
+            @media screen and (max-width: 768px) {
+                .hero h1 {
+                    font-size: 2.5rem;
+                }
+                
+                nav ul {
+                    font-size: 24px;
+                }
+                
+                .navbar {
+                    height: 80px;
+                }
+            }
+        </style>
+        <link rel="icon" type="image/jpg" href="https://imgs.search.brave.com/xYn4rsbrgRlx-4OzaOouA8rwUb-6wbV9JQMNVWZ8DUI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMud2l4c3RhdGlj/LmNvbS9tZWRpYS8w/N2YwNTJfODg5Yzg2/MzZmN2JmNGI1ZDhm/MWQyMmFmMWY1OGQy/NTl-bXYyLmpwZy92/MS9maWxsL3dfNjAw/LGhfNDg2LGFsX2Ms/cV84MCx1c21fMC42/Nl8xLjAwXzAuMDEs/ZW5jX2F2aWYscXVh/bGl0eV9hdXRvL0lN/R18xNjY1X2VkaXRl/ZC5qcGc">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Law Career Path</h1>
+                <p>Champion justice and build a career in the noble profession of law</p>
+            </div>
+        </section>
+        
+        <div class="container">
+            <section class="section">
+                <h2>What is Law?</h2>
+                <p>Law is a comprehensive field that encompasses the study of legal systems, jurisprudence, constitutional principles, and various branches of legal practice. It involves understanding the rules and regulations that govern society, the principles of justice, and the mechanisms for resolving disputes. Legal education develops critical thinking, analytical reasoning, and advocacy skills essential for upholding justice.</p>
+                <p>Law education prepares students for diverse career opportunities in legal practice, judiciary, corporate legal departments, government services, and policy-making. The legal profession plays a crucial role in maintaining social order, protecting individual rights, and ensuring justice. Lawyers serve as advocates, advisors, and guardians of the legal system, working to resolve conflicts and uphold constitutional values.</p>
+            </section>
+            
+            <section class="section">
+                <h2>Law Specializations</h2>
+                <p>Law offers diverse specialization areas catering to different interests and career goals. Here are some popular law specializations you can consider:</p>
+                
+                <div class="specializations">
+                    <div class="specialization-card">
+                        <h3>Criminal Law</h3>
+                        <p>Deals with crimes, criminal prosecution, defense advocacy, and the criminal justice system.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>Corporate Law</h3>
+                        <p>Focuses on business law, mergers & acquisitions, corporate governance, and commercial transactions.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>Constitutional Law</h3>
+                        <p>Study of constitutional principles, fundamental rights, and interpretation of constitutional provisions.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>Family Law</h3>
+                        <p>Covers marriage, divorce, child custody, adoption, and domestic relations legal matters.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>Intellectual Property Law</h3>
+                        <p>Protection of patents, trademarks, copyrights, and intellectual property rights in the digital age.</p>
+                    </div>
+                    
+                    <div class="specialization-card">
+                        <h3>Environmental Law</h3>
+                        <p>Environmental regulations, sustainability compliance, and climate change legal frameworks.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Eligibility & Requirements</h2>
+                <p>To pursue a career in law, you need to meet certain educational criteria and develop specific skills:</p>
+                
+                <div class="eligibility">
+                    <h3>Educational Requirements:</h3>
+                    <ul>
+                        <li><strong>5-Year Integrated LLB:</strong> 12th pass in any stream with 45-50% marks (General category)</li>
+                        <li><strong>3-Year LLB:</strong> Bachelor's degree in any discipline with 45-50% marks</li>
+                        <li><strong>Age Limit:</strong> Maximum 20 years for 5-year course, 30 years for 3-year course (varies by state)</li>
+                        <li><strong>Entrance Exam:</strong> Qualify in CLAT, AILET, or other law entrance examinations</li>
+                    </ul>
+                    
+                    <h3>Skills Required:</h3>
+                    <ul>
+                        <li><strong>Analytical Thinking:</strong> Ability to analyze complex legal issues and case precedents</li>
+                        <li><strong>Communication Skills:</strong> Excellent oral and written communication for court arguments</li>
+                        <li><strong>Research Skills:</strong> Thorough legal research and case study capabilities</li>
+                        <li><strong>Ethical Standards:</strong> High moral standards and commitment to justice</li>
+                        <li><strong>Memory & Retention:</strong> Ability to remember legal provisions and case laws</li>
+                        <li><strong>Negotiation Skills:</strong> Effective negotiation and mediation abilities</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Law Entrance Exams in India</h2>
+                <p>Here are the major entrance exams for law education in India:</p>
+                
+                <div class="exams-container">
+                    <div class="exam-card">
+                        <h3>1. CLAT (Common Law Admission Test)</h3>
+                        <p><strong>Conducting Body:</strong> Consortium of NLUs</p>
+                        <p><strong>Eligibility:</strong> 12th pass with 45% marks (for UG), LLB degree (for PG)</p>
+                        <p><strong>About:</strong> For admission to 22 National Law Universities across India</p>
+                        <a href="https://consortiumofnlus.ac.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card">
+                        <h3>2. AILET (All India Law Entrance Test)</h3>
+                        <p><strong>Conducting Body:</strong> National Law University, Delhi</p>
+                        <p><strong>Eligibility:</strong> 12th pass with 50% marks</p>
+                        <p><strong>About:</strong> For admission to BA LLB (Hons) program at NLU Delhi</p>
+                        <a href="https://nludelhi.ac.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card">
+                        <h3>3. LSAT India (Law School Admission Test)</h3>
+                        <p><strong>Conducting Body:</strong> Pearson VUE</p>
+                        <p><strong>Eligibility:</strong> 12th pass or equivalent</p>
+                        <p><strong>About:</strong> For admission to multiple private law schools across India</p>
+                        <a href="https://www.lsatindia.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card">
+                        <h3>4. BHU LLB Entrance</h3>
+                        <p><strong>Conducting Body:</strong> Banaras Hindu University</p>
+                        <p><strong>Eligibility:</strong> 12th pass with 50% marks</p>
+                        <p><strong>About:</strong> For admission to 5-year integrated LLB program at BHU</p>
+                        <a href="https://www.bhu.ac.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                    
+                    <div class="exam-card">
+                        <h3>5. DU LLB Entrance</h3>
+                        <p><strong>Conducting Body:</strong> National Testing Agency (NTA)</p>
+                        <p><strong>Eligibility:</strong> Bachelor's degree with 50% marks</p>
+                        <p><strong>About:</strong> For admission to 3-year LLB program at Delhi University</p>
+                        <a href="https://www.nta.ac.in/" target="_blank" class="btn" style="font-size: 0.9rem; padding: 8px 16px;">Visit Official Website</a>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Top Law Colleges in India</h2>
+                <div class="colleges">
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="NLSIU Campus" class="college-img">
+                        <div class="college-info">
+                            <h3>NLSIU Bangalore</h3>
+                            <p>Bangalore, Karnataka</p>
+                        </div>
+                    </div>
+                    
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="NALSAR Campus" class="college-img">
+                        <div class="college-info">
+                            <h3>NALSAR Hyderabad</h3>
+                            <p>Hyderabad, Telangana</p>
+                        </div>
+                    </div>
+                    
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="NLU Delhi Campus" class="college-img">
+                        <div class="college-info">
+                            <h3>NLU Delhi</h3>
+                            <p>New Delhi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="WBNUJS Campus" class="college-img">
+                        <div class="college-info">
+                            <h3>WBNUJS Kolkata</h3>
+                            <p>Kolkata, West Bengal</p>
+                        </div>
+                    </div>
+                    
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Jamia Millia Campus" class="college-img">
+                        <div class="college-info">
+                            <h3>Jamia Millia Islamia</h3>
+                            <p>New Delhi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="college-card">
+                        <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="GLC Mumbai Campus" class="college-img">
+                        <div class="college-info">
+                            <h3>GLC Mumbai</h3>
+                            <p>Mumbai, Maharashtra</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Law Education Pathway</h2>
+                <p>A typical pathway for legal education in India follows these steps:</p>
+                
+                <div style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-top: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #8B4513; margin-top: 0;">1. Undergraduate Level</h3>
+                    <ul>
+                        <li><strong>BA LLB (5 years):</strong> Integrated program combining liberal arts with legal education</li>
+                        <li><strong>BBA LLB (5 years):</strong> Business administration combined with law</li>
+                        <li><strong>B.Com LLB (5 years):</strong> Commerce and law integrated program</li>
+                        <li><strong>LLB (3 years):</strong> Professional law degree after graduation</li>
+                    </ul>
+                </div>
+                
+                <div style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-top: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #8B4513; margin-top: 0;">2. Professional Practice</h3>
+                    <ul>
+                        <li><strong>Bar Council Enrollment:</strong> Register with State Bar Council to practice law</li>
+                        <li><strong>Internships:</strong> Mandatory internships with law firms, courts, or legal aid organizations</li>
+                        <li><strong>All India Bar Examination (AIBE):</strong> Qualifying exam to practice law in India</li>
+                    </ul>
+                </div>
+                
+                <div style="background-color: #f9f9f9; border-radius: 10px; padding: 20px; margin-top: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <h3 style="color: #8B4513; margin-top: 0;">3. Postgraduate & Specialization</h3>
+                    <ul>
+                        <li><strong>LLM (Master of Laws):</strong> 1-2 years specialized study in specific law areas</li>
+                        <li><strong>Judicial Services:</strong> Competitive exams for becoming a judge</li>
+                        <li><strong>PhD in Law:</strong> Research degree for academic and research careers</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Career Prospects & Salary</h2>
+                <p>Law offers diverse career opportunities across legal practice, judiciary, corporate sector, and public service. Here's what you can expect in terms of job opportunities and compensation:</p>
+                
+                <h3>Average Starting Salary:</h3>
+                <p>₹3 - 8 lakhs per annum (junior lawyers and law firm associates)</p>
+                <p>₹6 - 15 lakhs per annum (top-tier law firms and corporate legal departments)</p>
+                
+                <h3>Mid-Career Salary (5-10 years):</h3>
+                <p>₹10 - 50 lakhs per annum (varies by specialization and practice area)</p>
+                
+                <h3>Senior Level Positions:</h3>
+                <p>Senior Advocate: ₹25 lakhs - 5 crores per annum | Corporate Counsel: ₹20 - 80 lakhs per annum | Judges: ₹15 - 40 lakhs per annum</p>
+                
+                <h3>Top Career Options:</h3>
+                <p>Advocate/Lawyer, Corporate Counsel, Legal Advisor, Judge, Public Prosecutor, Legal Journalist, Policy Analyst, Legal Consultant, Arbitrator, Law Professor, Compliance Officer, Human Rights Lawyer</p>
+                
+                <h3>Top Employers:</h3>
+                <p>Supreme Court & High Courts, Top Law Firms (AZB & Partners, Khaitan & Co, Shardul Amarchand Mangaldas), MNCs (Google, Microsoft, Amazon), PSUs (ONGC, SAIL, BHEL), Government Departments, International Organizations (UN, World Bank), Legal Aid Organizations</p>
+                
+                <a href="cgindex.html" class="btn">Back to Career Options</a>
+            </section>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Career Guidance. All rights reserved.</p>
+        </footer>
+    </body>
+</html>

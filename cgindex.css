@@ -1,0 +1,135 @@
+ 
+            nav {
+                background-color: yellow;
+                position: fixed;
+                width: 100%;
+                top: 0%;
+                z-index: 1000;
+            }
+            .navbar {
+                height: 100px;
+            }
+            nav ul {
+                list-style-type: none;
+                display: flex;
+                justify-content: space-around;
+                padding-top: 3px;
+                font-size: 30px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            nav ul li a {
+                text-decoration: none;
+                color: #333;
+            }
+            nav ul li a:active {
+                color: rgb(82, 60, 33);
+            }
+            body {
+                padding-top: 30px;
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+            .welcome {
+                height: 100vh;
+                background-color: aquamarine;
+                padding-top: 20%;
+                text-align: center;
+            }
+            .txt {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            .btn1 {
+                background-color: #007bff;
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 8px;
+                text-decoration: none;
+                font-size: 1.1rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            .btn1:hover {
+                background-color: #0056b3;
+            }
+            .btn1:active {
+                transform: scale(0.97);
+                background-color: #004a99;
+            }
+
+            /* New CSS for career options section */
+            .main {
+                padding: 40px 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .section-title {
+                text-align: center;
+                margin-bottom: 40px;
+                font-size: 2rem;
+                color: #333;
+            }
+            .career-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 30px;
+                justify-content: center;
+            }
+            .career-card {
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                overflow: hidden;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .career-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 20px rgba(0,0,0,0.2);
+            }
+            .career-img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+            .career-card h3 {
+                padding: 15px 20px 0;
+                font-size: 1.5rem;
+                color: #333;
+                margin-bottom: 10px;
+            }
+            .career-card p {
+                padding: 0 20px;
+                color: #666;
+                margin-bottom: 20px;
+                min-height: 80px;
+            }
+            .know-more-btn {
+                margin: 0 20px 20px;
+                padding: 10px 25px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+                display: inline-block;
+            }
+            .know-more-btn:hover {
+                background-color: #0056b3;
+            }
+            .know-more-btn:active {
+                transform: scale(0.97);
+                background-color: #004a99;
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .career-container {
+                    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                }
+                .welcome {
+                    padding-top: 30%;
+                }
+            }
